@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 110px;
+        height: 110px;
+        border-radius: 200px;
+        background-color: chartreuse;
+        font-family: cursive;
+        font-size: 0.7cm;
+      }
+      h1 {
+        background-color: greenyellow;
+      }
+      p {
+        font-size: 0.7cm;
+        background-color: lightsalmon;
+        background
+      }
+    </style>
+    <script>
+      function getTimeByTimeZone(offset, country) {
+        var d = new Date();
+        localTime = d.getTime();
+        localOffset = d.getTimezoneOffset() * 60000;
+        utcTime = localTime + localOffset; //get utc time
+        st = utcTime + 3600000 * offset; //get the specified timezone time
+        stime = new Date(st);
+        document.getElementById("showTime").innerHTML =
+          "The time in " + country + " is : " + stime.toString();
+        //document.body.textContent = "The specified time is :"+stime.toString();
+        //document.writeln("The specified time is :"+stime.toString())
+        //document.
+        //document.write("The specified time is :"+stime.toString());
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Time Zones</h1>
+    <p id="showTime"></p>
+    <button type="button" onclick="getTimeByTimeZone(5.5,'INDIA')">
+      India
+    </button>
+    <button type="button" onclick="getTimeByTimeZone(-4,'INDIANA')">
+      Indiana
+    </button>
+    <button type="button" onclick="getTimeByTimeZone(-7,'CALIFORNIA')">
+      California
+    </button>
+    <button type="button" onclick="getTimeByTimeZone(3,'QATAR')">Qatar</button>
+    <button type="button" onclick="getTimeByTimeZone(1,'SPAIN')">Spain</button>
+    <button type="button" onclick="getTimeByTimeZone(8,'TAIWAN')">
+      Taiwan
+    </button>
+  </body>
+</html>
